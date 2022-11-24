@@ -10,7 +10,7 @@ function Body() {
       <img src={Picture} alt="" className="image" />
       <h1>Joseph Odulesi</h1>
       <p>Frontend Developer & DevOps Engineer</p>
-      <a href="">My Website</a>
+      <a href="https://jossyd.netlify.app/">My Website</a>
       <div className="button">
         <a href="">
           <button className="email">
