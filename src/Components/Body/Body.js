@@ -5,39 +5,59 @@ import Email from "../../Resources/Email fav.png";
 import LinkedIn from "../../Resources/LinkedIn fav.png";
 
 function Body() {
+  const [memeData, setMemeData] = React.useState({
+    firstText: "",
+    secondText: "",
+    randomImage: "https://i.imgflip.com/7383sx.jpg",
+  });
+
+  const [allMemes, setAllMemes] = React.useState([]);
+
+  React.useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((meme) => setAllMemes(meme.data.memes));
+  }, []);
+
+  function getMemeImage() {
+    const randomNumber = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNumber].url;
+    setMemeData((prev) => ({
+      ...prev,
+      randomImage: url,
+    }));
+  }
+  console.log(memeData);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMemeData((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
   return (
     <div className="body">
-      <img src={Picture} alt="" className="image" />
-      <h1>Joseph Odulesi</h1>
-      <p>Frontend Developer & DevOps Engineer</p>
-      <a href="https://jossyd.netlify.app/">My Website</a>
-      <div className="button">
-        <a href="">
-          <button className="email">
-            <img src={Email} className="fav" />
-            <p>Email</p>
-          </button>
-        </a>
-
-        <a href="https://www.linkedin.com/in/jossydee1/">
-          <button className="linkedin">
-            <img src={LinkedIn} className="fav" />
-            <p>LinkedIn</p>
-          </button>
-        </a>
-      </div>{" "}
-      <dii className="about">
-        <h1>About</h1>
-        <p>
-          fI am a Software Engineer who likes to develop digital products with
-          great user experience. I desire to solve many life challenges with
-          digital technology and make life experiences more interesting for
-          humanity.
-        </p>
-      </dii>
-      <div className="interest">
-        <h1>Interest</h1>
-        <p>Techology, Music, Football, Innovations</p>
+      <div>
+        <input
+          type="text"
+          name="firstText"
+          placeholder="firstText"
+          value={memeData.firstText}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="secondText"
+          placeholder="secondText"
+          value={memeData.secondText}
+          onChange={handleChange}
+        />
+      </div>
+      <button onClick={getMemeImage}>Get Meme Image</button>
+      <div>
+        <img src={memeData.randomImage} alt="" />
+        <h3>aschkcu</h3>
+        <h3>csacjkhsagccahs</h3>
       </div>
     </div>
   );
