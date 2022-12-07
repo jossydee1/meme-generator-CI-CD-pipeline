@@ -3,79 +3,59 @@
   align-items: center;
   flex-direction: column;
   color: white;
+  margin-bottom: 2vh;
 }
 
-.body > a {
-  text-decoration: none;
-  cursor: pointer;
-  color: blue;
+.form {
+  margin-top: 2vh;
+  display: grid;
+  grid-template: 50px 50px/ 1fr 1fr;
+  gap: 15px;
 }
 
-.image {
-  width: 20%;
-  display: flex;
-  justify-items: center;
-  border-radius: 20px;
-}
-
-.button {
-  display: flex;
-  margin-block: 10px;
-}
-
-.button > a {
-  text-decoration: none;
-}
-
-.button > a > button {
-  margin-inline: 10px;
-  padding-inline: 20px;
-  cursor: pointer;
-}
-.email {
-  background-color: white;
-  display: flex;
-  align-items: center;
+.form > input {
+  text-indent: 10px;
   border-radius: 10px;
-  border-color: white;
-  color: black;
-  font-weight: 800;
-  font-size: 1.2rem;
+  border: 1px solid gray;
 }
-.email > img {
-  width: 20px;
-  padding-inline: 20px;
-}
-.linkedin {
-  background-color: rgb(0, 119, 255);
-  display: flex;
-  align-items: center;
+
+.form > button {
+  grid-column: 1/ -1;
   border-radius: 10px;
-  border-color: rgb(0, 119, 255);
+  margin-bottom: 10px;
+  background-color: rgb(11, 13, 33);
   color: white;
-  font-weight: 800;
-  font-size: 1.2rem;
-}
-.linkedin > img {
-  width: 20px;
-  padding-inline: 20px;
+  cursor: pointer;
+  border: none;
 }
 
-.about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.input > input {
+  margin: 10px;
 }
-.about >p {
-    width: 30%;
-    margin-top: 0;
+
+.meme {
+  display: flex;
 }
-.interest{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.meme > img {
+  max-width: 80vw;
+  max-height: 60vh;
 }
-.interest > p {
-    width: 80%;
-    margin-top: 0;
+
+.memetext--first {
+  position: absolute;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  font-size: 3vw;
+  max-width: 40vw;
+  color: yellow;
+  margin-bottom: 20px;
+}
+.memetext--second {
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  font-size: 3vw;
+  max-width: 40vw;
+  color: yellow;
 }

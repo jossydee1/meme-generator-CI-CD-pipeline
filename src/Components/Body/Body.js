@@ -1,8 +1,5 @@
 import React from "react";
 import "./Body.css";
-import Picture from "../../Resources/image.png";
-import Email from "../../Resources/Email fav.png";
-import LinkedIn from "../../Resources/LinkedIn fav.png";
 
 function Body() {
   const [memeData, setMemeData] = React.useState({
@@ -31,33 +28,32 @@ function Body() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setMemeData((prev) => {
-      return { ...prev, [name]: value };
-    });
+    setMemeData((prev) => ({ ...prev, [name]: value }));
   };
   return (
     <div className="body">
-      <div>
+      <div className="form">
         <input
           type="text"
           name="firstText"
-          placeholder="firstText"
+          placeholder="First Text"
           value={memeData.firstText}
           onChange={handleChange}
         />
         <input
           type="text"
           name="secondText"
-          placeholder="secondText"
+          placeholder="Second Text"
           value={memeData.secondText}
           onChange={handleChange}
         />
+        <button onClick={getMemeImage}>Get Meme Image</button>
       </div>
-      <button onClick={getMemeImage}>Get Meme Image</button>
-      <div>
+
+      <div className="meme">
+        <h3 className="memetext--first">{memeData.firstText} </h3>
         <img src={memeData.randomImage} alt="" />
-        <h3>aschkcu</h3>
-        <h3>csacjkhsagccahs</h3>
+        <h3 className="memetext--second">{memeData.secondText}</h3>
       </div>
     </div>
   );
