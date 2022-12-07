@@ -17,6 +17,7 @@
   text-indent: 10px;
   border-radius: 10px;
   border: 1px solid gray;
+  max-width: 40vw;
 }
 
 .form > button {
