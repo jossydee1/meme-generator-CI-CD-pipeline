@@ -1,5 +1,5 @@
  # Exercise - Rollback
- AWSTemplateFormatVersion: 2023-05-25
+ AWSTemplateFormatVersion: 2010-09-09
  Description: DevOps Practice 
  Resources:
    EC2Instance:
