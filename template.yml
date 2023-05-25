@@ -8,7 +8,7 @@
        SecurityGroups:
          - !Ref InstanceSecurityGroup
        # Change this, as applicable to you      
-       KeyName: Largefocus
+       KeyName: Terraform
        # Change this, as applicable to you
        # You may need to find out what instance types are available in your region - use https://cloud-images.ubuntu.com/locator/ec2/
        ImageId: 'ami-0261755bbcb8c4a84' 
